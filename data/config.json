@@ -1,0 +1,17 @@
+{
+    "resolution": [
+        1440,
+        900
+    ],
+    "fullscreen": true,
+    "fps": 120,
+    "vsync": true,
+    "background": [
+        0,
+        0,
+        0
+    ],
+    "name": "Game",
+    "icon": "heart",
+    "loading": "loading.jpg"
+}

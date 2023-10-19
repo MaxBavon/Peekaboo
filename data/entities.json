@@ -1,0 +1,28 @@
+{
+    "player": {
+        "position": [
+            500,
+            500
+        ],
+        "movingSpeed": 30,
+        "sprite": "ship",
+        "animation": "player_anim",
+        "engine": "base_engine",
+        "burst": "supercharged_engine_anim",
+        "weapon": "base_weapon_anim",
+        "animSpeed": 5,
+        "hitRadius": 25
+    },
+    "fighter": {
+        "position": [
+            200,
+            200
+        ],
+        "movingSpeed": 100,
+        "sprite": "fighter_idle",
+        "animation": "fighter_ship_anim",
+        "burst": "fighter_burst_anim",
+        "animSpeed": 5,
+        "hitRadius": 20
+    }
+}
