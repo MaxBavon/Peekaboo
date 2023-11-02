@@ -24,8 +24,8 @@
     "health": 2,
     "speed": 3,
     "fireRate": 0.8,
-    "trackingDist": 250,
-    "shootingDist": 500,
+    "trackingDist": 500,
+    "shootingDist": 1000,
     "mass": 1,
     "loot": 4
   },
@@ -39,8 +39,8 @@
     "health": 5,
     "speed": 2,
     "fireRate": 1,
-    "trackingDist": 300,
-    "shootingDist": 500,
+    "trackingDist": 600,
+    "shootingDist": 1000,
     "mass": 1,
     "loot": 3
   },
@@ -54,8 +54,8 @@
     "health": 1,
     "speed": 6,
     "fireRate": 0.3,
-    "trackingDist": 200,
-    "shootingDist": 600,
+    "trackingDist": 400,
+    "shootingDist": 800,
     "mass": 1,
     "loot": 5
   },
@@ -68,9 +68,9 @@
     "hitRadius": 50,
     "health": 8,
     "speed": 4,
-    "fireRate": 0.25,
-    "trackingDist": 600,
-    "shootingDist": 600,
+    "fireRate": 0.5,
+    "trackingDist": 1200,
+    "shootingDist": 1200,
     "mass": 1,
     "loot": 2
   },
@@ -84,8 +84,8 @@
     "health": 5,
     "speed": 2,
     "fireRate": 1,
-    "trackingDist": 100,
-    "shootingDist": 500,
+    "trackingDist": 200,
+    "shootingDist": 1000,
     "mass": 1,
     "loot": 5
   },
@@ -99,8 +99,8 @@
     "health": 50,
     "speed": 0.5,
     "fireRate": 2,
-    "trackingDist": 500,
-    "shootingDist": 800,
+    "trackingDist": 1000,
+    "shootingDist": 1600,
     "mass": 1,
     "loot": 1
   }

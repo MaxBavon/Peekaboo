@@ -14,7 +14,6 @@ class Weapon:
     def __init__(self, weapontype) -> None:
         data = Data.weapons[weapontype]
         self.name = weapontype
-        self.damage = data.damage
         self.bullet = data.bullet
         self.offset = data.offset
         self.animator = Animator(Assets.sprites[data.animation], data.animSpeed)
@@ -25,7 +24,6 @@ class Weapon:
     def change(self, weapontype):
         data = Data.weapons[weapontype]
         self.name = weapontype
-        self.damage = data.damage
         self.animator.switch_animations(Assets.sprites[data.animation], data.animSpeed)
         self.bullet = data.bullet
         self.offset = data.offset

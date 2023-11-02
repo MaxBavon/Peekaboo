@@ -2,7 +2,6 @@
   "base_weapon": {
     "animation": "base_weapon_anim",
     "animSpeed": 15,
-    "damage": 10,
     "bullet": "base_bullet",
     "offset": [
       0,
@@ -36,7 +35,6 @@
   "big_weapon": {
     "animation": "big_weapon_anim",
     "animSpeed": 25,
-    "damage": 10,
     "bullet": "big_bullet",
     "offset": [
       0,
@@ -80,8 +78,7 @@
   },
   "rocket_weapon": {
     "animation": "rocket_weapon_anim",
-    "animSpeed": 20,
-    "damage": 10,
+    "animSpeed": 15,
     "bullet": "rocket_bullet",
     "offset": [
       0,
@@ -181,9 +178,6 @@
   "zapper_weapon": {
     "animation": "zapper_weapon_anim",
     "animSpeed": 30,
-    "cooldown": 0.5,
-    "fireRate": 1,
-    "damage": 10,
     "bullet": "zapper_bullet",
     "offset": [
       0,

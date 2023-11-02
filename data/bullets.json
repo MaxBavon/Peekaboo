@@ -34,7 +34,7 @@
     "animation": "big_bullet_anim1",
     "animSpeed": 20,
     "speed": 750,
-    "damage": 25,
+    "damage": 10,
     "lifeSpan": 100,
     "hitRadius": 20,
     "bulletHit": "gas_explosion",
@@ -62,7 +62,7 @@
   "ennemy_bullet": {
     "type": "bullet",
     "animation": "ennemy_bullet_anim",
-    "animSpeed": 1,
+    "animSpeed": 20,
     "speed": 1250,
     "damage": 1,
     "lifeSpan": 300,

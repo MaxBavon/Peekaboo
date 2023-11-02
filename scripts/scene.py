@@ -204,7 +204,7 @@ class Scene:
 
         if self.state == "playing":
 
-            # self.update_spawn()
+            self.update_spawn()
             if self.environmentUpdate: self.environment.update(self.deltaTime)
             if self.objectsUpdate: self.update_objects(self.objects)
             if self.entitiesUpdate: self.update_entities(self.entities)

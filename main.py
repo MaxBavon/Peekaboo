@@ -1,3 +1,3 @@
 from scripts.game import *
 
-Game().launch() 
+Game().launch()

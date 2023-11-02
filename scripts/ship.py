@@ -36,8 +36,8 @@ class Ship(PolarEntity):
 
         self.movingDir = pygame.Vector2(0, 0)
         self.distance_to_target = 0
-        self.trackingDist = data.trackingDist
-        self.shootingDist = data.shootingDist
+        self.trackingDist = data.trackingDist * UNIT
+        self.shootingDist = data.shootingDist * UNIT
         self.loot = data.loot
 
     def update(self, deltaTime):
