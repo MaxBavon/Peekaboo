@@ -1,28 +1,107 @@
 {
-    "player": {
-        "position": [
-            500,
-            500
-        ],
-        "movingSpeed": 30,
-        "sprite": "ship",
-        "animation": "player_anim",
-        "engine": "base_engine",
-        "burst": "supercharged_engine_anim",
-        "weapon": "base_weapon_anim",
-        "animSpeed": 5,
-        "hitRadius": 25
-    },
-    "fighter": {
-        "position": [
-            200,
-            200
-        ],
-        "movingSpeed": 100,
-        "sprite": "fighter_idle",
-        "animation": "fighter_ship_anim",
-        "burst": "fighter_burst_anim",
-        "animSpeed": 5,
-        "hitRadius": 20
-    }
+  "player": {
+    "type": "player",
+    "position": [
+      0,
+      0
+    ],
+    "animation": "player_anim",
+    "animSpeed": 5,
+    "engine": "base_engine",
+    "weapon": "base_weapon",
+    "hitRadius": 25,
+    "speed": 0,
+    "health": 1000,
+    "mass": 1
+  },
+  "fighter": {
+    "type": "ennemy",
+    "animation": "fighter_anim",
+    "animSpeed": 10,
+    "bullet": "ennemy_bullet",
+    "trail": "ennemy_trail",
+    "hitRadius": 30,
+    "health": 2,
+    "speed": 3,
+    "fireRate": 0.8,
+    "trackingDist": 250,
+    "shootingDist": 500,
+    "mass": 1,
+    "loot": 4
+  },
+  "frigate": {
+    "type": "ennemy",
+    "animation": "frigate_anim",
+    "animSpeed": 10,
+    "bullet": "ennemy_ray_bullet",
+    "trail": "ennemy_trail",
+    "hitRadius": 40,
+    "health": 5,
+    "speed": 2,
+    "fireRate": 1,
+    "trackingDist": 300,
+    "shootingDist": 500,
+    "mass": 1,
+    "loot": 3
+  },
+  "scout": {
+    "type": "ennemy",
+    "animation": "scout_anim",
+    "animSpeed": 10,
+    "bullet": "ennemy_bullet",
+    "trail": "ennemy_trail",
+    "hitRadius": 20,
+    "health": 1,
+    "speed": 6,
+    "fireRate": 0.3,
+    "trackingDist": 200,
+    "shootingDist": 600,
+    "mass": 1,
+    "loot": 5
+  },
+  "torpedo": {
+    "type": "ennemy",
+    "animation": "torpedo_anim",
+    "animSpeed": 10,
+    "bullet": "ennemy_torpedo_bullet",
+    "trail": "ennemy_trail",
+    "hitRadius": 50,
+    "health": 8,
+    "speed": 4,
+    "fireRate": 0.25,
+    "trackingDist": 600,
+    "shootingDist": 600,
+    "mass": 1,
+    "loot": 2
+  },
+  "bomber": {
+    "type": "ennemy",
+    "animation": "bomber_anim",
+    "animSpeed": 10,
+    "bullet": "ennemy_big_bullet",
+    "trail": "ennemy_trail",
+    "hitRadius": 22,
+    "health": 5,
+    "speed": 2,
+    "fireRate": 1,
+    "trackingDist": 100,
+    "shootingDist": 500,
+    "mass": 1,
+    "loot": 5
+  },
+  "imperial": {
+    "type": "ennemy",
+    "animation": "imperial_anim",
+    "animSpeed": 10,
+    "bullet": "ennemy_wave_bullet",
+    "trail": "ennemy_trail",
+    "hitRadius": 80,
+    "health": 50,
+    "speed": 0.5,
+    "fireRate": 2,
+    "trackingDist": 500,
+    "shootingDist": 800,
+    "mass": 1,
+    "loot": 1
+  }
 }

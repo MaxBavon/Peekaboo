@@ -1,0 +1,266 @@
+{
+  "ennemy_trail": {
+    "offset": 35,
+    "speed": 500,
+    "idleSpeed": 200,
+    "friction": 4,
+    "lifeSpan": 0.3,
+    "growthRate": -20,
+    "fadeRate": 3000,
+    "radius": [
+      3,
+      5
+    ],
+    "idleRadius": [
+      1,
+      3
+    ],
+    "colors": [
+      [
+        0,
+        0,
+        255
+      ],
+      [
+        0,
+        255,
+        255
+      ]
+    ]
+  },
+  "base_engine_trail": {
+    "offset": 35,
+    "speed": 500,
+    "idleSpeed": 200,
+    "friction": 4,
+    "lifeSpan": 1,
+    "growthRate": -15,
+    "fadeRate": 450,
+    "radius": [
+      5,
+      10
+    ],
+    "idleRadius": [
+      2,
+      5
+    ],
+    "colors": [
+      [
+        255,
+        0,
+        0
+      ],
+      [
+        255,
+        255,
+        0
+      ]
+    ]
+  },
+  "burst_engine_trail": {
+    "offset": 45,
+    "speed": 600,
+    "idleSpeed": 250,
+    "friction": 4,
+    "lifeSpan": 1,
+    "growthRate": -16,
+    "fadeRate": 400,
+    "radius": [
+      8,
+      12
+    ],
+    "idleRadius": [
+      4,
+      8
+    ],
+    "colors": [
+      [
+        0,
+        0,
+        255
+      ],
+      [
+        0,
+        255,
+        255
+      ]
+    ]
+  },
+  "supercharged_engine_trail": {
+    "offset": 40,
+    "speed": 700,
+    "idleSpeed": 300,
+    "friction": 4,
+    "lifeSpan": 1,
+    "growthRate": -18,
+    "fadeRate": -400,
+    "radius": [
+      10,
+      15
+    ],
+    "idleRadius": [
+      5,
+      10
+    ],
+    "colors": [
+      [
+        255,
+        0,
+        0
+      ],
+      [
+        255,
+        0,
+        255
+      ]
+    ]
+  },
+  "big_engine_trail": {
+    "offset": 50,
+    "speed": 900,
+    "idleSpeed": 350,
+    "friction": 4,
+    "lifeSpan": 1,
+    "growthRate": 20,
+    "fadeRate": -400,
+    "radius": [
+      12,
+      16
+    ],
+    "idleRadius": [
+      8,
+      12
+    ],
+    "colors": [
+      [
+        0,
+        255,
+        255
+      ],
+      [
+        0,
+        255,
+        0
+      ]
+    ]
+  },
+  "rainbow_trail": {
+    "offset": 50,
+    "speed": 2000,
+    "idleSpeed": 500,
+    "friction": 4,
+    "lifeSpan": 5,
+    "growthRate": -5,
+    "fadeRate": 100,
+    "radius": [
+      15,
+      30
+    ],
+    "idleRadius": [
+      0,
+      15
+    ],
+    "colors": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        255,
+        255,
+        255
+      ]
+    ]
+  },
+  "explosion": {
+    "animation": "explosion_anim",
+    "animSpeed": 18,
+    "glowColor": [
+      255,
+      0,
+      0,
+      70
+    ]
+  },
+  "explosion2": {
+    "animation": "explosion2_sheet",
+    "animSpeed": 35,
+    "glowColor": [
+      255,
+      0,
+      0,
+      70
+    ]
+  },
+  "explosion3": {
+    "animation": "explosion3_sheet",
+    "animSpeed": 35,
+    "glowColor": [
+      255,
+      0,
+      0,
+      70
+    ]
+  },
+  "explosion4": {
+    "animation": "explosion4_sheet",
+    "animSpeed": 35,
+    "glowColor": [
+      255,
+      0,
+      0,
+      70
+    ]
+  },
+  "explosion5": {
+    "animation": "explosion5_sheet",
+    "animSpeed": 15,
+    "glowColor": [
+      255,
+      0,
+      0,
+      70
+    ]
+  },
+  "explosion6": {
+    "animation": "explosion6_sheet",
+    "animSpeed": 35,
+    "glowColor": [
+      255,
+      0,
+      0,
+      70
+    ]
+  },
+  "explosion7": {
+    "animation": "explosion7_sheet",
+    "animSpeed": 20,
+    "glowColor": [
+      255,
+      0,
+      0,
+      70
+    ]
+  },
+  "explosion8": {
+    "animation": "explosion8_sheet",
+    "animSpeed": 35,
+    "glowColor": [
+      255,
+      0,
+      0,
+      70
+    ]
+  },
+  "gas_explosion": {
+    "animation": "gas_explosion_sheet",
+    "animSpeed": 60,
+    "glowColor": [
+      0,
+      255,
+      0,
+      70
+    ]
+  }
+}

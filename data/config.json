@@ -1,17 +1,30 @@
 {
-    "resolution": [
-        1440,
-        900
-    ],
-    "fullscreen": true,
-    "fps": 120,
-    "vsync": true,
-    "background": [
-        0,
-        0,
-        0
-    ],
-    "name": "Game",
-    "icon": "heart",
-    "loading": "loading.jpg"
+  "resolution": [
+    1440,
+    900
+  ],
+  "fullscreen": true,
+  "fps": 120,
+  "vsync": true,
+  "background": [
+    0,
+    0,
+    0
+  ],
+  "name": "Peekaboo",
+  "icon": "heart",
+  "loading": "loading.jpg",
+  "main_background": "space_bg",
+  "keys": {
+    "power": "space",
+    "cheat": "lshift",
+    "shoot": "leftmouse"
+  },
+  "key_mapping": {
+    "space": 32,
+    "lshift": 1073742049,
+    "leftmouse": 0,
+    "middlemouse": 1,
+    "rightmouse": 2
+  }
 }

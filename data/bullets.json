@@ -1,0 +1,137 @@
+{
+  "base_bullet": {
+    "type": "bullet",
+    "animation": "base_bullet_anim",
+    "animSpeed": 20,
+    "speed": 1500,
+    "damage": 1,
+    "lifeSpan": 300,
+    "hitRadius": 10,
+    "bulletHit": "explosion2",
+    "resistance": 1,
+    "mass": 1,
+    "collisions": [
+      "ennemy"
+    ]
+  },
+  "rocket_bullet": {
+    "type": "bullet",
+    "animation": "rocket_bullet_anim",
+    "animSpeed": 20,
+    "speed": 1500,
+    "damage": 2,
+    "lifeSpan": 450,
+    "hitRadius": 5,
+    "bulletHit": "explosion3",
+    "resistance": 1,
+    "mass": 1,
+    "collisions": [
+      "ennemy"
+    ]
+  },
+  "big_bullet": {
+    "type": "bullet",
+    "animation": "big_bullet_anim1",
+    "animSpeed": 20,
+    "speed": 750,
+    "damage": 25,
+    "lifeSpan": 100,
+    "hitRadius": 20,
+    "bulletHit": "gas_explosion",
+    "resistance": 3,
+    "mass": 1,
+    "collisions": [
+      "ennemy"
+    ]
+  },
+  "zapper_bullet": {
+    "type": "bullet",
+    "animation": "zapper_bullet_anim",
+    "animSpeed": 20,
+    "speed": 2250,
+    "damage": 4,
+    "lifeSpan": 500,
+    "hitRadius": 15,
+    "bulletHit": "explosion5",
+    "resistance": 2,
+    "mass": 1,
+    "collisions": [
+      "ennemy"
+    ]
+  },
+  "ennemy_bullet": {
+    "type": "bullet",
+    "animation": "ennemy_bullet_anim",
+    "animSpeed": 1,
+    "speed": 1250,
+    "damage": 1,
+    "lifeSpan": 300,
+    "hitRadius": 15,
+    "bulletHit": "explosion7",
+    "resistance": 1,
+    "mass": 1,
+    "collisions": [
+      "player"
+    ]
+  },
+  "ennemy_big_bullet": {
+    "type": "bullet",
+    "animation": "ennemy_big_bullet_anim",
+    "animSpeed": 20,
+    "speed": 1500,
+    "damage": 2,
+    "lifeSpan": 400,
+    "hitRadius": 18,
+    "bulletHit": "explosion6",
+    "resistance": 1,
+    "mass": 1,
+    "collisions": [
+      "player"
+    ]
+  },
+  "ennemy_torpedo_bullet": {
+    "type": "bullet",
+    "animation": "ennemy_torpedo_bullet_anim",
+    "animSpeed": 20,
+    "speed": 1500,
+    "damage": 5,
+    "lifeSpan": 500,
+    "hitRadius": 15,
+    "bulletHit": "explosion8",
+    "resistance": 1,
+    "mass": 1,
+    "collisions": [
+      "player"
+    ]
+  },
+  "ennemy_ray_bullet": {
+    "type": "bullet",
+    "animation": "ennemy_ray_bullet_anim",
+    "animSpeed": 20,
+    "speed": 1800,
+    "damage": 1,
+    "lifeSpan": 200,
+    "hitRadius": 15,
+    "bulletHit": "explosion5",
+    "resistance": 2,
+    "mass": 1,
+    "collisions": [
+      "player"
+    ]
+  },
+  "ennemy_wave_bullet": {
+    "type": "bullet",
+    "animation": "ennemy_wave_bullet_anim",
+    "animSpeed": 20,
+    "speed": 2500,
+    "damage": 3,
+    "lifeSpan": 400,
+    "hitRadius": 30,
+    "bulletHit": "explosion5",
+    "resistance": 3,
+    "mass": 1,
+    "collisions": [
+      "player"
+    ]
+  }
+}

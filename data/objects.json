@@ -1,0 +1,50 @@
+{
+  "base_weapon_powerup": {
+    "powerup": "base_weapon",
+    "hitRadius": 10,
+    "animation": "base_weapon_powerup_anim1",
+    "animSpeed": 20
+  },
+  "big_weapon_powerup": {
+    "powerup": "big_weapon",
+    "hitRadius": 10,
+    "animation": "big_weapon_powerup_anim1",
+    "animSpeed": 20
+  },
+  "rocket_weapon_powerup": {
+    "powerup": "rocket_weapon",
+    "hitRadius": 10,
+    "animation": "rocket_weapon_powerup_anim1",
+    "animSpeed": 20
+  },
+  "zapper_weapon_powerup": {
+    "powerup": "zapper_weapon",
+    "hitRadius": 10,
+    "animation": "zapper_weapon_powerup_anim1",
+    "animSpeed": 20
+  },
+  "base_engine_powerup": {
+    "powerup": "base_engine",
+    "hitRadius": 10,
+    "animation": "base_engine_powerup_anim1",
+    "animSpeed": 20
+  },
+  "big_engine_powerup": {
+    "powerup": "big_engine",
+    "hitRadius": 10,
+    "animation": "big_engine_powerup_anim1",
+    "animSpeed": 20
+  },
+  "burst_engine_powerup": {
+    "powerup": "burst_engine",
+    "hitRadius": 10,
+    "animation": "burst_engine_powerup_anim1",
+    "animSpeed": 20
+  },
+  "supercharged_engine_powerup": {
+    "powerup": "supercharged_engine",
+    "hitRadius": 10,
+    "animation": "supercharged_engine_powerup_anim1",
+    "animSpeed": 20
+  }
+}

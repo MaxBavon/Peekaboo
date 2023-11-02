@@ -258,6 +258,9 @@ class PolarTransform:
     def collidepoint(self, point):
         return self.radius ** 2 <= (point.x - self.position.x) ** 2 + (point.y - self.position.y) ** 2
 
+    def collide(self, other):
+        return (self.position.x - other.position.x) ** 2 + (self.position.y - other.position.y) ** 2 <= (self.radius + other.radius) ** 2
+
     def update(self, image):
         self.imgSize = pygame.Vector2(image.get_width()/2, image.get_height()/2)
     
@@ -267,6 +270,8 @@ class PolarTransform:
 
 
 class Animator1D:
+
+    __slots__ = ["frame", "animation", "animLength", "animSpeed", "playing"]
 
     def __init__(self, animation, animSpeed):
         self.frame = 0
@@ -285,44 +290,61 @@ class Animator1D:
         if self.playing:
             self.frame += self.animSpeed * deltaTime
             self.frame %= self.animLength
-            return self.animation[int(self.frame)]
+            return self.animation[int(self.frame)].copy()
     
-    def switch_animation(self, animation):
+    def switch_animation(self, animation, animSpeed):
         self.animation = animation
         self.animLength = len(self.animation)
         self.playing = False
         self.frame = 0
+        self.animSpeed = animSpeed
+    
+    def anim_end(self):
+        return self.frame >= self.animLength - 1
 
 
 class Animator:
 
+    __slots__ = ["frame", "preAnim", "anim", "next_anim", "animations", "animLength", "animSpeed"]
+
     def __init__(self, animations, animSpeed):
         self.frame = 0
+        self.preAnim = "None"
         self.anim = "None"
-        self.preAnim = self.anim
+        self.next_anim = "None"
         self.animations = animations
         self.animLength = 0
         self.animSpeed = animSpeed
         self.play("idle")
 
     def animate(self, deltaTime):
+        if self.next_anim != self.anim and self.anim_end():
+            self.play(self.next_anim)
         self.frame += self.animSpeed * deltaTime
         self.frame %= self.animLength
-        return self.animations[self.anim][int(self.frame)]
+        return self.animations[self.anim][int(self.frame)].copy()
     
     def play(self, anim):
         self.preAnim = self.anim
         self.anim = anim
+        self.next_anim = anim
         if self.anim != self.preAnim:
             self.frame = 0
             self.animLength = len(self.animations[self.anim])
 
-    def switch_animations(self, animations):
-        self.animations = animations
+    def switch_animations(self, animations, animSpeed):
+        self.animations = animations    
+        self.preAnim = "None"
         self.anim = "None"
-        self.preAnim = self.anim
+        self.next_anim = "None"
+        self.animSpeed = animSpeed
         self.play("idle")
 
+    def anim_end(self):
+        return self.frame >= self.animLength - 1
+
+    def queue(self, anim):
+        self.next_anim = anim
 
 class DataObject:
 

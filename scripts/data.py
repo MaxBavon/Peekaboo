@@ -11,9 +11,7 @@ __all__ = ["Data"]
 class Data:
 
     path = "data/"
-    # config = {}
-    # levels = {}   
-    # entities = {}
+    scriptable_objs = ["entities", "weapons", "engines", "bullets"]
 
     @classmethod
     def load(cls):
@@ -26,16 +24,20 @@ class Data:
 
                     try:
                         attr_name = os.path.splitext(fileName)[0]
-                        if attr_name == "entities":
-                            newData = {}
-                            for name, entity in data.items():
-                                newData[name] = DataObject(entity)
-                                setattr(Data, attr_name, newData)
+                        if attr_name in cls.scriptable_objs:
+                            cls.load_objects(attr_name, data)
                         else:
                             setattr(Data, attr_name, data)
                     except  json.JSONDecodeError:
                         errors.append(f"Error Decoding {fileName} JSON File.")
         return errors
+
+    @classmethod
+    def load_objects(cls, attr_name, objects):
+        data = {}
+        for name, obj in objects.items():
+            data[name] = DataObject(obj)
+            setattr(cls, attr_name, data)
 
     @classmethod
     def save(cls):
@@ -46,11 +48,15 @@ class Data:
                     attr_name = os.path.splitext(fileName)[0]
                     data = getattr(Data, attr_name)
 
-                    if attr_name == "entities":
-                        new_data = {}
-                        for name, entity in data.items():
-                            new_data[name] = entity.to_dict()
-
-                        json.dump(new_data, fileData, indent=4)
+                    if attr_name in cls.scriptable_objs:
+                        data = cls.save_objects(data)
+                        json.dump(data, fileData, indent=2)
                     else:
-                        json.dump(data, fileData, indent=4)
+                        json.dump(data, fileData, indent=2)
+    
+    @classmethod
+    def save_objects(cls, objects) -> dict:
+        data = {}
+        for name, obj in objects.items():
+            data[name] = obj.to_dict()
+        return data

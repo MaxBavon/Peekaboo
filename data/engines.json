@@ -1,0 +1,52 @@
+{
+  "base_engine": {
+    "animation": "base_engine_anim",
+    "particle": "base_engine_trail",
+    "animSpeed": 20,
+    "thrust": 5,
+    "offset": [
+      0,
+      0
+    ]
+  },
+  "burst_engine": {
+    "animation": "burst_engine_anim",
+    "particle": "burst_engine_trail",
+    "animSpeed": 10,
+    "thrust": 8,
+    "offset": [
+      0,
+      0
+    ]
+  },
+  "supercharged_engine": {
+    "animation": "supercharged_engine_anim",
+    "particle": "supercharged_engine_trail",
+    "animSpeed": 20,
+    "thrust": 12,
+    "offset": [
+      0,
+      0
+    ]
+  },
+  "big_engine": {
+    "animation": "big_engine_anim",
+    "particle": "big_engine_trail",
+    "animSpeed": 25,
+    "thrust": 15,
+    "offset": [
+      0,
+      0
+    ]
+  },
+  "boost_engine": {
+    "animation": "base_engine_anim",
+    "particle": "rainbow_trail",
+    "animSpeed": 25,
+    "thrust": 50,
+    "offset": [
+      0,
+      0
+    ]
+  }
+}

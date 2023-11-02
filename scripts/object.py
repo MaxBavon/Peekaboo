@@ -1,26 +1,41 @@
 import pygame
-from .sprite import *
+from .components import *
 
+__all__ = ["Object"]
 
-class Object(Sprite):
+class Object(pygame.sprite.Sprite):
 
-    __all__ = ["position", "image", "hitbox", "size"]
+    __all__ = ["image", "transform"]
     scene = None
 
-    def __init__(self, pos, img):
-        super().__init__(pos, img)
-        self.hitbox = img.get_rect(center=self.position)
-        self.size = pygame.Vector2(img.get_size())
-    
-    def __str__(self):
-        return f"Sprite <Pos ({self.position.x}, {self.position.y})>"
-    
+    def __init__(self, pos, hitRadius, image):
+        super().__init__()
+        self.image = image
+        self.transform = PolarTransform(pos, hitRadius, image)
+
     @classmethod
-    def instantiate(cls, pos, color):
-        cls.scene.objects.add(cls(pos, color))
+    def instantiate(cls, *args, **kargs):
+        cls.scene.objects.add(cls(*args, **kargs))
 
     def collide(self, other):
-        return self.hitbox.colliderect(other.hitbox)
+        return self.transform.collide(other.transform)
+
+    def render(self, surface, offset, screen):
+        if self.transform.rect.colliderect(screen):
+            surface.blit(self.image, self.transform.imgPosition - offset)
+
+    def render_debug(self, surface, offset):
+        # Rect
+        rect = self.transform.rect
+        rect.center -= offset
+        pygame.draw.rect(surface, (255, 255, 255), rect, 1)
+        # Hitbox
+        color = (255, 0, 0)
+        hitcircle = self.transform.hitcircle
+        hitcircle.center -= offset
+        pygame.draw.circle(surface, color, hitcircle.center, hitcircle.radius, 1)
+        # Position
+        pygame.draw.circle(surface, (255, 255, 255), self.transform.position - offset, 2)
 
     def destroy(self):
-        self.scene.particles.kill(self)
+        self.scene.objects.remove(self)

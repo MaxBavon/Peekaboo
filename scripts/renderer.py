@@ -3,6 +3,7 @@ from time import perf_counter
 from .data import *
 from .assets import *
 from .object import *
+from .particle import *
 
 __all__ = ["Renderer"]
 
@@ -15,15 +16,16 @@ class Renderer:
         self.camera = self.scene.camera
         self.background = Data.config["background"]
 
-        self.levelRender = True
+        self.environmentRender = True
         self.playerRender = True
-        self.spriteRender = True
         self.objectsRender = True
         self.entitiesRender = True
         self.particlesRender = True
         self.UIRender = True
         self.debugRender = False
         self.debugRenderUI = True
+
+        Particle1D.renderer = self
 
         self.renderLatency = 0.00
     def __call__(self):
@@ -39,17 +41,22 @@ class Renderer:
         surf = current_font.render(text, 1, color)
         self.screen.blit(surf, (self.game.RESOLUTION[0] - current_font.size(text)[0], y))
 
+    def render_glow(self, pos, radius, color=(255,255,255,100)):
+        surf = pygame.Surface((radius*2, radius*2), pygame.SRCALPHA)
+        surf.set_alpha(color[3])
+        pygame.draw.circle(surf, color, (radius, radius), radius)
+        self.screen.blit(surf, pos)
+
     def render_all(self):
         render_start_time = perf_counter()
         self.screen.fill(self.background)
 
         if self.scene.state == "playing" or self.scene.state == "pause":
-            if self.levelRender: self.render_level(self.scene.level)
-            if self.playerRender: self.render_player(self.scene.player.sprite)
-            if self.spriteRender: self.render_sprites(self.scene.sprites)
+            if self.environmentRender: self.render_environment(self.scene.environment)
+            if self.particlesRender: self.render_particles(self.scene.particles)
             if self.objectsRender: self.render_objects(self.scene.objects)
             if self.entitiesRender: self.render_entities(self.scene.entities)
-            if self.particlesRender: self.render_particles(self.scene.particles)
+            if self.playerRender: self.render_player(self.scene.player.sprite)
 
         if self.UIRender: self.render_ui(self.scene.UIManager)
         if self.debugRenderUI: self.render_debug(self.scene)
@@ -62,18 +69,14 @@ class Renderer:
         pygame.display.update()
         self.renderLatency = round((perf_counter() - render_start_time) * 1000, 1)
 
-    def render_level(self, level):
-        level.render(self.screen, self.camera.offset, self.camera.rect)
-        if self.debugRender:
-            level.render_debug(self.screen, self.camera.offset, self.camera.rect)
-
-    def render_sprites(self, sprites):
-        for sprite in sprites:
-            sprite.render(self.screen, self.camera.offset)
+    def render_environment(self, stars):
+        stars.render(self.screen, self.camera.offset)
 
     def render_objects(self, objects):
         for obj in objects:
-            obj.render(self.screen, self.camera.offset)
+            obj.render(self.screen, self.camera.offset, self.camera.rect)
+            if self.debugRender:
+                obj.render_debug(self.screen, self.camera.offset)
 
     def render_entities(self, entities):
         for entity in entities:
@@ -105,7 +108,6 @@ class Renderer:
         update_lat_txt = f"Update : {scene.updateLatency}ms"
         render_lat_txt = f"Render : {self.renderLatency}ms"
 
-        sprites_txt = f"S : {len(scene.sprites)}"
         objects_txt = f"O : {len(scene.objects)}"
         entities_txt = f"E : {len(scene.entities)}"
         particles_txt = f"P : {len(scene.particles)}"
@@ -116,8 +118,7 @@ class Renderer:
         self.render_text_debug(fixed_txt, 40, color)
         self.render_text_debug(update_lat_txt, 60, color=(255, 100, 100))
         self.render_text_debug(render_lat_txt, 80, color=(100, 100, 255))
-        self.render_text_debug(sprites_txt, 100)
-        self.render_text_debug(objects_txt, 120)
-        self.render_text_debug(entities_txt, 140)
-        self.render_text_debug(particles_txt, 160)
-        self.render_text_debug(camera_txt, 180)
+        self.render_text_debug(objects_txt, 100)
+        self.render_text_debug(entities_txt, 120)
+        self.render_text_debug(particles_txt, 140)
+        self.render_text_debug(camera_txt, 160)

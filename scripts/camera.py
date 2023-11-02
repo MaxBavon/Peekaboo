@@ -28,8 +28,6 @@ class Camera:
         self.position = self.target.position
         self.rect.center = self.position
         self.offset = self.position - self.screenCenter
-        self.offset.x = round(self.offset.x)
-        self.offset.y = round(self.offset.y)
 
     def render_debug(self, surface):
         pygame.draw.circle(surface, (255, 255, 255), self.screenCenter, 0)
@@ -52,5 +50,15 @@ class SmoothCamera(Camera):
 
         self.rect.center = self.position
         self.offset = self.position - self.screenCenter
+
+class PixelPerfectCamera(Camera):
+    
+    __slots__ = ["game", "target", "position", "offset", "screenCenter", "rect"]
+
+    def __init__(self, game):
+        super().__init__(game)
+    
+    def update(self, deltaTime):
+        super().update(deltaTime)
         self.offset.x = round(self.offset.x)
         self.offset.y = round(self.offset.y)

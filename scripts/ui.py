@@ -25,6 +25,9 @@ class UIManager:
                 self.objects.append(obj)
             else:
                 self.buttons.append(obj)
+    
+    def get(self, index):
+        return self.objects[index]
 
     def clicked(self):
         for obj in self.buttons:
